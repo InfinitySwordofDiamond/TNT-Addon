@@ -1,0 +1,39 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "tnt:tnt5",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "tag:tnt:tnt": {},
+      
+      "tnt:components": ["tnt:tnt"],
+
+      "minecraft:tick": {
+          "interval_range": [0, 0],
+          "looping": true
+      },
+
+      "minecraft:map_color": "#FF0000",
+      "minecraft:light_emission": 0,
+
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 0
+      },
+
+      "minecraft:destructible_by_explosion": {
+        "explosion_resistance": 0
+      },
+
+      "minecraft:friction": 0.4,
+      
+      "minecraft:flammable": {
+        "flame_odds": 15,
+        "burn_odds": 100
+      }
+    }
+  }
+}

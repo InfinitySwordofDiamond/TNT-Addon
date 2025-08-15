@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.40",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "tnt:tnt4",
+            "materials": {
+				"default": "entity_alphatest"
+			},
+            "textures": {
+                "default": "textures/entity/tnt4"
+            },
+            "geometry": {
+                "default": "geometry.full_block"
+            },
+            "render_controllers": ["controller.render.tnt"]
+        }
+    }
+}
