@@ -1,21 +1,21 @@
 {
     "format_version": 2,
     "header": {
-        "name": "TNT Addon (Behavior Pack)",
-        "description": "Adds 5 destructive TNTs into the game",
-        "uuid": "41118614-fb0c-4df2-9cf1-a2596b234933",
+        "name": "TNT Addon + 2 Extra TNTs (Behavior Pack)",
+        "description": "Adds 7 destructive TNTs into the game",
+        "uuid": "181ac640-37fc-4f48-b2dc-2c23f6ec6f80",
         "version": [1, 0, 0],
         "min_engine_version": [1, 21, 100]
     },
     "modules": [
         {
             "type": "data",
-            "uuid": "5753ec88-2927-4bed-bf21-916145442847",
+            "uuid": "8cfa9a0e-4a1e-4496-ad39-17321ccd3dd6",
             "version": [1, 0, 0]
         },  
         {
             "type": "script",
-            "uuid": "d14ab100-6136-40ca-ad20-576a492accda",
+            "uuid": "542ce6b1-b6c8-469d-a21e-ab17a44508ac",
             "version": [1, 0, 0],
             "entry": "scripts/tnt.js"
         }
