@@ -11,6 +11,7 @@ export class CraterGenerator {
         this.radiusSquared = radius ** 2
         this.radiusSquaredInner = (radius - 1) ** 2
         this.tickingAreaCount = 0
+        this.oldWorld = false
         this.x = this.z = -radius
         this.unbreakableBlocks = [
             "minecraft:bedrock",
@@ -45,15 +46,19 @@ export class CraterGenerator {
             }
 
             catch (e) {
-                this.dimension.runCommand(`tickingarea add ${cx} ${cy} ${cz - 384} ${cx + 16} ${cy} ${cz + 384} CraterTickingZone${this.tickingAreaCount}`)
-                this.tickingAreaCount++
+                if (!this.oldWorld) {
+                    this.dimension.runCommand(`tickingarea add ${cx} ${cy} ${cz - 384} ${cx + 16} ${cy} ${cz + 384} CraterTickingZone${this.tickingAreaCount}`)
+                    this.tickingAreaCount++
 
-                if (this.tickingAreaCount > 9) {
-                    this.dimension.runCommand(`tickingarea remove_all`)
-                    this.tickingAreaCount = 0
+                    if (this.tickingAreaCount > 9) {
+                        this.dimension.runCommand(`tickingarea remove_all`)
+                        this.tickingAreaCount = 0
+                    }
+
+                    await this.waitTicks(1000)
                 }
-
-                await this.waitTicks(1000)
+                
+                else return
             }
         }
     }
@@ -112,53 +117,86 @@ export class CraterGenerator {
     }
 
     startCraterGeneration() {
-        const craterRun = system.runInterval(async () => {
-            if (!this.center || this.x === undefined) return
-            let count = 0
+        system.runTimeout(async () => {
+            this.dimension.runCommand(`tickingarea remove_all`)
+            await this.waitTicks(1)
 
-            while (count < this.calculationSpeed) {
-                const distanceSquared = this.x ** 2 + this.z ** 2
+            this.dimension.runCommand(`tickingarea add 305 64 -15 336 64 16`)
+            await this.waitTicks(1)
 
-                if (distanceSquared <= this.radiusSquaredInner) {
-                    await this.calculateCrater(distanceSquared, false)
+            if (this.dimension.getBlock({ x: 320, y: 60, z: 0 }) === undefined) {
+                this.dimension.runCommand(`tickingarea remove_all`)
+                await this.waitTicks(1)
+
+                for (let z = -5; z <= 5; z++) {
+                    this.dimension.runCommand(`tickingarea add -240 64 ${z * 48} 240 64 ${z * 48 + 32} CraterTickingZone${z + 5}`)
                 }
                 
-                else if (distanceSquared <= this.radiusSquared) {
-                    await this.calculateCrater(distanceSquared, true)
-                }
+                this.oldWorld = true
+            }
 
-                this.z++
+            if (this.oldWorld) {
+                const run = system.runInterval(async() => {
+                    for (let z = -5; z <= 5; z++) {
+                        this.dimension.runCommand(`tickingarea add -240 64 ${z * 48} 240 64 ${z * 48 + 32} CraterTickingZone${z + 5}`)
+                    }
 
-                if (this.z > this.radius) {
-                    this.dimension.playSound("ambient.weather.thunder", this.center, {volume: this.radius})
-                    this.z = -(this.radius)
-                    this.x++
-
-                    if (this.x > this.radius) {
-                        system.clearRun(craterRun)
+                    if (this.entity === undefined) {
+                        system.clearRun(run)
+                        await this.waitTicks(1)
                         this.dimension.runCommand(`tickingarea remove_all`)
-                        this.dimension.playSound("random.explode", this.center, {volume: this.radius, pitch: 0.75})
+                    }
+                }, 1)
+            }
 
-                        for (let i = 0; i < this.radius * 2; i++) {
-                            const offset = {
+            const craterRun = system.runInterval(async () => {
+                if (!this.center || this.x === undefined) return
+                let count = 0
+
+                while (count < this.calculationSpeed) {
+                    const distanceSquared = this.x ** 2 + this.z ** 2
+
+                    if (distanceSquared <= this.radiusSquaredInner) {
+                        await this.calculateCrater(distanceSquared, false)
+                    }
+                    
+                    else if (distanceSquared <= this.radiusSquared) {
+                        await this.calculateCrater(distanceSquared, true)
+                    }
+
+                    this.z++
+
+                    if (this.z > this.radius) {
+                        this.dimension.playSound("ambient.weather.thunder", this.center, {volume: this.radius})
+                        this.z = -(this.radius)
+                        this.x++
+
+                        if (this.x > this.radius) {
+                            system.clearRun(craterRun)
+                            this.dimension.runCommand(`tickingarea remove_all`)
+                            this.dimension.playSound("random.explode", this.center, {volume: this.radius, pitch: 0.75})
+
+                            for (let i = 0; i < this.radius * 2; i++) {
+                                const offset = {
                                 x: this.center.x + ((Math.random() - 0.5) * (this.radius / 2)),
                                 y: this.center.y + ((Math.random() - 0.5) * (this.radius / 2)),
                                 z: this.center.z + ((Math.random() - 0.5) * (this.radius / 2))
+                                }
+
+                                try {
+                                    this.dimension.spawnParticle("minecraft:large_explosion", offset)
+                                }
+
+                                catch (e) {}
                             }
 
-                            try {
-                                this.dimension.spawnParticle("minecraft:large_explosion", offset)
-                            }
-
-                            catch (e) {}
+                            this.entity = this.center = this.x = this.z = undefined
+                            return
                         }
-
-                        this.entity = this.center = this.x = this.z = undefined
-                        return
                     }
+                    count++
                 }
-                count++
-            }
-        })
+            })
+        })  
     }
 }

@@ -1,21 +1,21 @@
 {
     "format_version": 2,
     "header": {
-        "name": "TNT Addon (Behavior Pack)",
+        "name": "TNT Addon (Behavior Pack) [Old World Fix]",
         "description": "Adds 5 destructive TNTs into the game",
-        "uuid": "41118614-fb0c-4df2-9cf1-a2596b234933",
+        "uuid": "a34b0e4a-8aa9-412e-b1e0-57887e1a2f84",
         "version": [1, 0, 0],
-        "min_engine_version": [1, 21, 100]
+        "min_engine_version": [1, 21, 90]
     },
     "modules": [
         {
             "type": "data",
-            "uuid": "5753ec88-2927-4bed-bf21-916145442847",
+            "uuid": "2ee25f1a-c8d4-4a6a-a916-c0ed5ec84a34",
             "version": [1, 0, 0]
         },  
         {
             "type": "script",
-            "uuid": "d14ab100-6136-40ca-ad20-576a492accda",
+            "uuid": "67ece019-8b4f-47a1-9bc5-18dd1598ee53",
             "version": [1, 0, 0],
             "entry": "scripts/tnt.js"
         }
@@ -23,7 +23,7 @@
     "dependencies": [
         {
             "module_name": "@minecraft/server",
-            "version": "2.2.0-beta"
+            "version": "2.1.0-beta"
         },
         {
             "uuid": "913160cd-6944-4ef4-8d32-25faa7b7ef67",
