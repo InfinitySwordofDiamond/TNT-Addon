@@ -12,7 +12,7 @@ The last 2 bonus TNTs won't have their own textures and will be published in a s
 ## **List of TNTs**
 
 <details>
-<summary>**TNT #1**</summary>
+<summary>TNT #1</summary>
 
 **Radius:** 20  
 **Render Time:** 0 seconds  
@@ -24,7 +24,7 @@ The last 2 bonus TNTs won't have their own textures and will be published in a s
 ---
 
 <details>
-<summary>**TNT #2**</summary>
+<summary>TNT #2</summary>
 
 **Radius:** 40  
 **Render Time:** 1 second  
@@ -36,7 +36,7 @@ The last 2 bonus TNTs won't have their own textures and will be published in a s
 ---
 
 <details>
-<summary>**TNT #3**</summary>
+<summary>TNT #3</summary>
 
 **Radius:** 80  
 **Render Time:** 3 seconds  
@@ -48,7 +48,7 @@ The last 2 bonus TNTs won't have their own textures and will be published in a s
 ---
 
 <details>
-<summary>**TNT #4**</summary>
+<summary>TNT #4</summary>
 
 **Radius:** 160  
 **Render Time:** 14 seconds  
@@ -60,7 +60,7 @@ The last 2 bonus TNTs won't have their own textures and will be published in a s
 ---
 
 <details>
-<summary>**TNT #5**</summary>
+<summary>TNT #5</summary>
 
 **Radius:** 320  
 **Render Time:** 1 minute 23 seconds  
@@ -72,7 +72,7 @@ The last 2 bonus TNTs won't have their own textures and will be published in a s
 ---
 
 <details>
-<summary>**TNT #6**</summary>
+<summary>TNT #6</summary>
 
 **Radius:** 640  
 **Render Time:** 6 minutes 22 seconds  
@@ -84,7 +84,7 @@ The last 2 bonus TNTs won't have their own textures and will be published in a s
 ---
 
 <details>
-<summary>**TNT #7**</summary>
+<summary>TNT #7</summary>
 
 **Radius:** 1280  
 **Render Time:** 27 minutes 10 seconds  
