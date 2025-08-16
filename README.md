@@ -108,18 +108,13 @@ The last 2 bonus TNTs won't have their own textures and will be published in a s
 ---
 
 #### **Planned Additions**
-- One TNT that allows **custom radii** (will replace TNT #6 and TNT #7)
-- TNT Launcher with **rapid fire** setting
-- Configurable block blacklist/whitelist for TNT destruction
+I plan to add one more TNT that allows custom radii which will replace TNT #6 and TNT #7. Similar to my datapack version, I plan to add a TNT Launcher along with the rapid fire setting as well as a configurable list of blocks to be kept / destroyed by the TNTs.
 
 ---
 
 #### **Known Issues**
-- No native way to add ticking chunks except `runCommand()` — causes async issues, e.g., TNT #7 may leave small block artifacts.
-- Full craters must be inside render distance to avoid errors (unless in flat worlds).
-- In Old World types, detection between "out of simulation distance" vs "out of bounds" is not perfect.  
-  Temporary fix: a file that adds 10 ticking areas to cover a **256x256 area**.  
-  Worlds larger than 256x256 or infinite worlds may have issues.
+- Because there are no methods to add ticking chunks beside the `runCommand()` function, many issues occur due to the function running asynchronously. For example, the crater of TNT #7 has a few block sticks can appear and the full crater of TNTs must be within the render distance (unless it is a Flat World Type with minimal features) in order to continue processing with less errors.
+- I haven't found a method to detect the difference between out of simulation distance vs out of bounds in Old World types so I temporarily fixed this issue in a separate file by directly adding 10 ticking areas that fills in a 256x256 area. Any Old World Types with sizes larger than 256x256 could have potential issues and sometimes using this file could possibly have issues in infinite world types.
 - TNT sometimes leaves flowing water/lava despite them not being in the blacklist.
 
 ---
