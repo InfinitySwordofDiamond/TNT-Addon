@@ -95,6 +95,17 @@ The last 2 bonus TNTs won't have their own textures and will be published in a s
 
 ---
 
+<details>
+<summary>Visualization</summary>
+
+Sizes of all TNT Craters in comparison.
+
+![Visualization](https://media.forgecdn.net/attachments/1289/594/tnt-craters-visualization.png)
+
+</details>
+
+---
+
 ## **Notes** :warning: **(Required to Read)**
 
 - **BETA APIS MUST BE TURNED ON IN THE EXPERIMENTAL TAB IN ORDER FOR THIS ADDON TO WORK.**
