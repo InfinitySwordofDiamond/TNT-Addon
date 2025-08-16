@@ -114,6 +114,7 @@ Sizes of all TNT Craters in comparison.
 - All ticking areas will be removed — remember ticking area coordinates and re-add them after using TNTs.
 - Rendering will be buggy because it is Bedrock Edition so either wait for the rendering to fix itself or restart the world.
 - Due to the massive crater of TNT #7, set render distance to max (96) for fastest results.
+- The TNT blocks function a bit differently than the vanilla TNT as placing blocks on their face will not emit any sound, will disappear instead of igniting when burned or destroyed by explosions, and have slightly different igniting mechanics.
 - The loading times of the images above are from my end and yours may vary.
 
 ---
