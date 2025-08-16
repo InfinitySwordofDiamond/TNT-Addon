@@ -101,7 +101,7 @@ The last 2 bonus TNTs won't have their own textures and will be published in a s
 - The file with 5 TNTs should be used for lower-end and mobile devices because of memory limitations.
 - Set render distance to match the TNT crater size (probably unless it's a flat world) or rendering will hang until you're back within range.  
   Recommended to set simulation distance to max.
-- All ticking areas will be removed — remember coordinates and re-add them after using TNTs.
+- All ticking areas will be removed — remember ticking area coordinates and re-add them after using TNTs.
 - Rendering may be buggy in Bedrock Edition. Wait for it to fix or restart the world.
 - Due to the massive crater of TNT #7, set render distance to max (96) for fastest results.
 - Loading times listed are from the creator's end; yours may vary.
