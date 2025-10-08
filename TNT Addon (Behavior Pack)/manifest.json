@@ -5,7 +5,7 @@
         "description": "Adds 5 destructive TNTs into the game",
         "uuid": "a34b0e4a-8aa9-412e-b1e0-57887e1a2f84",
         "version": [1, 0, 0],
-        "min_engine_version": [1, 21, 100]
+        "min_engine_version": [1, 21, 111]
     },
     "modules": [
         {
@@ -23,7 +23,7 @@
     "dependencies": [
         {
             "module_name": "@minecraft/server",
-            "version": "2.2.0-beta"
+            "version": "2.3.0-beta"
         },
         {
             "uuid": "913160cd-6944-4ef4-8d32-25faa7b7ef67",
