@@ -4,8 +4,8 @@
         "name": "TNT Addon + 2 Extra TNTs (Behavior Pack)",
         "description": "Adds 7 destructive TNTs into the game",
         "uuid": "181ac640-37fc-4f48-b2dc-2c23f6ec6f80",
-        "version": [1, 0, 0],
-        "min_engine_version": [1, 21, 111]
+        "version": [1, 3, 0],
+        "min_engine_version": [1, 21, 120]
     },
     "modules": [
         {
@@ -23,11 +23,11 @@
     "dependencies": [
         {
             "module_name": "@minecraft/server",
-            "version": "2.3.0-beta"
+            "version": "2.4.0-beta"
         },
         {
             "uuid": "913160cd-6944-4ef4-8d32-25faa7b7ef67",
-            "version": [1, 0, 0]
+            "version": [1, 3, 0]
         }
     ],
     "metadata": {
