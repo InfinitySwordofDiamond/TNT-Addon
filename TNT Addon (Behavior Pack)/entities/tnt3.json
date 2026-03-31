@@ -1,5 +1,5 @@
 {
-  "format_version": "1.26.0",
+  "format_version": "1.26.10",
   "minecraft:entity": {
     "description": {
       "identifier": "tnt:tnt3",
@@ -56,10 +56,7 @@
 	    "minecraft:physics": {
       },
 
-      "minecraft:pushable": {
-        "is_pushable": false,
-        "is_pushable_by_piston": true
-      },
+      "minecraft:pushable_by_block": {},
       
       "minecraft:conditional_bandwidth_optimization": {
         "default_values": {
