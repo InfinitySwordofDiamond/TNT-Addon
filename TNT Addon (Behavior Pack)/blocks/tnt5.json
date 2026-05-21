@@ -1,5 +1,5 @@
 {
-  "format_version": "1.26.10",
+  "format_version": "1.26.20",
   "minecraft:block": {
     "description": {
       "identifier": "tnt:tnt5",
@@ -8,10 +8,10 @@
       }
     },
     "components": {
-      "tag:tnt:tnt": {},
-      
-      "tnt:components": ["tnt:tnt"],
+      "minecraft:tags": ["tnt:tnt"],
 
+      "tnt:components": ["tnt:tnt"],
+      
       "minecraft:tick": {
           "interval_range": [0, 0],
           "looping": true
@@ -31,8 +31,8 @@
       "minecraft:friction": 0.4,
       
       "minecraft:flammable": {
-        "flame_odds": 15,
-        "burn_odds": 100
+        "catch_chance_modifier": 15,
+        "destroy_chance_modifier": 100
       }
     }
   }
