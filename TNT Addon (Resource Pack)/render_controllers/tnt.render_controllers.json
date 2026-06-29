@@ -1,0 +1,20 @@
+{
+    "format_version": "1.21.40",
+    "render_controllers": {
+        "controller.render.tnt": {
+            "geometry": "geometry.default",
+			"materials": [
+				{
+					"*": "material.default"
+				}
+			],
+			"textures": ["texture.default"],
+            "overlay_color": {
+                "r": "1.0",
+                "g": "1.0",
+                "b": "1.0",
+                "a": "(query.property('tnt:is_flashing') == true) ? 0.75 : 0.0"
+            }
+        }
+    }
+}
