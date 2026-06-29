@@ -9,9 +9,9 @@
     },
     "components": {
       "minecraft:tags": ["tnt:tnt"],
-
-      "tnt:components": ["tnt:tnt"],
       
+      "tnt:components": ["tnt:tnt"],
+
       "minecraft:tick": {
           "interval_range": [0, 0],
           "looping": true
