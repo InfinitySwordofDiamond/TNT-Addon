@@ -1,11 +1,11 @@
 {
     "format_version": 2,
     "header": {
-        "name": "TNT Addon (Resource Pack) [26.30]",
+        "name": "TNT Addon (Resource Pack) [26.40]",
         "description": "Adds 5 destructive TNTs into the game",
         "uuid": "913160cd-6944-4ef4-8d32-25faa7b7ef67",
-        "version": [1, 8, 0],
-        "min_engine_version": [1, 26, 30]
+        "version": [1, 9, 0],
+        "min_engine_version": [1, 26, 40]
     },
     "modules": [
         {
